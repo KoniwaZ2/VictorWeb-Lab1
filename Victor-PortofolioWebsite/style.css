@@ -1,3 +1,10 @@
+/* Ensure hero section is visible */
+.hero {
+  min-height: 400px;
+  background-color: #222;
+  background-size: cover;
+  background-position: center;
+}
 :root {
   --hero-overlay: rgba(0, 0, 0, 0.35);
 }

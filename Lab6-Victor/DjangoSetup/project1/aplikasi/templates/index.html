@@ -80,7 +80,13 @@
               </td>
             </form>
           </tr>
-          {% empty %} {% endfor %}
+          {% empty %}
+          <tr>
+            <td colspan="4" style="text-align: center">
+              Tidak ada data mahasiswa.
+            </td>
+          </tr>
+          {% endfor %}
         </tbody>
       </table>
 

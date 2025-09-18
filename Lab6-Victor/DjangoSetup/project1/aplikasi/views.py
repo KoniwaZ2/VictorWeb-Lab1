@@ -26,7 +26,7 @@ def mahasiswa(request):
     elif action == "delete":
       Mahasiswa.objects.filter(id=request.POST.get("id")).delete()
       
-      return redirect("mahasiswa")
+      return redirect("aplikasi")
     
   mymahasiswa = Mahasiswa.objects.all()
   template = loader.get_template('index.html')

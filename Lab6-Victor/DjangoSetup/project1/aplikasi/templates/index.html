@@ -13,13 +13,13 @@
 
       <form
         method="post"
-        actions="{% url 'aplikasi' %}"
+        action="{% url 'aplikasi' %}"
         style="margin-bottom: 20px"
       >
         {% csrf_token %}
         <input type="hidden" name="action" value="add" />
 
-        <input type="text" name="NIM" placeholder="NIM" required />
+        <input type="text" name="nim" placeholder="NIM" required />
         <input type="text" name="firstname" placeholder="Nama Depan" required />
         <input
           type="text"
@@ -42,7 +42,7 @@
         <tbody>
           {% for m in mymahasiswa %}
           <tr>
-            <form method="post" actions="{% url 'aplikasi' %}">
+            <form method="post" action="{% url 'aplikasi' %}">
               {% csrf_token %}
               <td>
                 <input type="hidden" name="id" value="{{ m.id }}" />

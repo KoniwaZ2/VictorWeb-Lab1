@@ -140,6 +140,7 @@ h1::after {
 
 /* Form Input Styling - Target semua input */
 input[type="text"],
+input[type="int"],
 input[type="number"],
 input[type="email"],
 input[name*="nim"],

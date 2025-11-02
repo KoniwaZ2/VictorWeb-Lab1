@@ -1,40 +1,16 @@
 import React from "react";
 
-// Helper function to get full image URL
 const getImageUrl = (coverPath) => {
   if (!coverPath) {
-    console.log("No cover path provided");
     return "";
   }
 
-  console.log("Original cover path:", coverPath);
-
-  // If it's already a full URL, return as is
   if (coverPath.startsWith("http://") || coverPath.startsWith("https://")) {
-    console.log("Full URL detected:", coverPath);
     return coverPath;
   }
 
-  // Backend base URL
   const baseURL = "http://localhost:8000";
-
-  // Handle different path formats
-  let fullURL;
-  if (coverPath.startsWith("/media/")) {
-    // Path already includes /media/
-    fullURL = `${baseURL}${coverPath}`;
-  } else if (coverPath.startsWith("media/")) {
-    // Path has media/ without leading slash
-    fullURL = `${baseURL}/${coverPath}`;
-  } else if (coverPath.startsWith("/")) {
-    // Path has leading slash but no media - add media
-    fullURL = `${baseURL}/media${coverPath}`;
-  } else {
-    // No leading slash, no media - add both
-    fullURL = `${baseURL}/media/${coverPath}`;
-  }
-
-  console.log("Constructed URL:", fullURL);
+  const fullURL = `${baseURL}/media${coverPath}`;
   return fullURL;
 };
 
